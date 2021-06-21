@@ -4,7 +4,7 @@
 # @Project: my_eudyptula_solution
 # @Filename: Makefile.mak
 # @Last modified by:   prasad_s_udawant
-# @Last modified time: 2021-06-21T21:55:21+05:30
+# @Last modified time: 2021-06-21T22:38:24+05:30
 # @License: GPLV3
 
 # If KERNELRELEASE is defined, we've been invoked from the kernel build system
@@ -18,10 +18,10 @@ else
 KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
 
+endif
+
 default:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
 
 clean:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
-
-endif
